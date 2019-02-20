@@ -1,0 +1,7 @@
+The Session API provides methods for performing the CRUD operation.
+	•	To CREATE/UPDATE the data, the methods available are :
+			save(), persist(), update(), saveOrUpdate()
+	•	To READ the data, the methods available are:
+			get(), load(), refresh()
+	•	To DELETE the data, the method available is:
+			delete()

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 19, 2019 10:58:20 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.hibernate.crud.OrderTbl" table="ordertbl">
+        <id name="orderId" type="java.lang.String" >
+            <column name="ORDERID" />
+        </id>
+        <property name="productId" type="java.lang.String">
+            <column name="PRODUCTID" />
+        </property>
+        <property name="productName" type="java.lang.String">
+            <column name="PRODUCTNAME" />
+        </property>
+        <property name="productQuantity" type="int">
+            <column name="PRODUCTQUANTITY" />
+        </property>
+    </class>
+</hibernate-mapping>
