@@ -43,6 +43,8 @@ public class OrderTbl implements Serializable{
 	public void setProductQuantity(int productQuantity) {
 		this.productQuantity = productQuantity;
 	}
-	
+	public String toString(){
+		return (orderId + " "+productId+" "+ productName+" "+productQuantity);
+	}
 
 }

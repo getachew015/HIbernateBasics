@@ -14,7 +14,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 
-public class CustomerConfigClient {
+public class CustomerClient {
 	/*
 	Steps To Connect To Database Using Hibernate
 	Let us discuss the basic steps for a Java application to connect to the database using Hibernate.
