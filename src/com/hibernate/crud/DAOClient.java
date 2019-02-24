@@ -43,8 +43,7 @@ public class DAOClient {
 		}
 		case 'R':{
 			System.out.println("Provide Order Id/PK value ");
-			String orderIdVal = scan.next();
-			orderdao.getOrder(orderIdVal);
+			orderdao.getOrder(scan.next());
 			break;
 		}
 		case 'U':{
@@ -63,8 +62,7 @@ public class DAOClient {
 		}
 		case 'D':{
 			System.out.println("Provide Order Id to delete record ");
-			orderId = scan.next();
-			orderdao.deleteOrder(orderId);
+			orderdao.deleteOrder(scan.next());
 			break;
 		}
 		default:
