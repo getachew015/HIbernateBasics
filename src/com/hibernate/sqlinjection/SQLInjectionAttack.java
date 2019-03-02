@@ -46,13 +46,18 @@ public class SQLInjectionAttack {
 		 */
 		Session session = HibernateUtil.getSession().openSession();
 		//This returns exception ---> Legacy-style query parameters (`?`) are no longer supported;
-		Query<Object[]> query = session.createQuery("select o.orderId, o.productQuantity from "
-				+ "OrderTbl o where o.orderId = ? and o.productQuantity > ?");
-		query.setParameter(0, orderId);
-		query.setParameter(1, quantity);
-		query.executeUpdate();
-		List<Object[]> list = query.list();
-		list.forEach(order -> System.out.println("OrderId - "+order[0]+" ProductId - "+order[1]));
+		try {
+			Query<Object[]> query = session.createQuery("select o.orderId, o.productQuantity from "
+					+ "OrderTbl o where o.orderId = ? and o.productQuantity > ?");
+			query.setParameter(0, orderId);
+			query.setParameter(1, quantity);
+			query.executeUpdate();
+			List<Object[]> list = query.list();
+			list.forEach(order -> System.out.println("OrderId - "+order[0]+" Product Quantity - "+order[1]));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		session.close();
 	}
 	

@@ -5,6 +5,19 @@
 
 <hibernate-configuration>
     <session-factory name="mysession">
+		<property name="hibernate.current_session_context_class">thread</property>
+<!-- 		<property name="hibernate.cache.region.factory_class"> 
+			org.hibernate.cache.ehcache.EhCacheRegionFactory
+		</property>
+ -->		<!-- For singleton factory -->
+		<!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>
+		 -->
+		 
+		 <!-- enable second level cache and query cache -->
+<!-- 		 <property name="hibernate.cache.use_second_level_cache">true</property>
+		 <property name="hibernate.cache.use_query_cache">true</property>
+ 		 <property name="net.sf.ehcache.configurationResourceName">/MyEhcache.xml</property>
+ -->
     	<property name = "hibernate.dialect">
 	        org.hibernate.dialect.MySQLInnoDBDialect
 	    </property>
@@ -30,5 +43,6 @@
         <!-- Mapping annotated class --> 
         <!-- <mapping class="com.hibernate.configuration.CustomerWIthAnnotation"/> -->
         <mapping resource="/com/hibernate/crud/OrderTbl.hbm.xml"/>
+        <mapping class="com.hibernate.autogeneration.Product" />
     </session-factory>
 </hibernate-configuration>

@@ -1,6 +1,8 @@
 package com.hibernate.hql;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 import org.hibernate.Session;
@@ -51,8 +53,26 @@ public class HQLDemo {
 		//when writing HQL we pass the type as the table name in this case OrderTbl it should be the class name case sensitive
 		Session session = HibernateUtil.getSession().openSession();
 		Query<OrderTbl> queryList = session.createQuery("from OrderTbl o where o.productQuantity>5");
-		List<OrderTbl> orderList = queryList.list();
-		orderList.forEach(order -> System.out.println(order.toString()));
+		Random random = new Random();
+		int randomNum = random.nextInt(8);
+		if(randomNum >4){
+			//list() makes one network call to DB to fetch all the records i.e eager loading
+			System.out.println("Based on the random number generated used list() to fetch");
+			List<OrderTbl> orderList = queryList.list();
+			orderList.forEach(order -> System.out.println(order.toString()));			
+		}else{
+			/*
+			 * iterate() makes one n/w call to DB and returns list of PK values with a Proxy object i.e lazy loading
+			 * and then it makes n number of DB calls for each get access on the pk values
+			 */
+			
+			System.out.println("Based on the random number generated used iterate() to fetch");
+			Iterator<OrderTbl> iter = queryList.iterate();
+			while(iter.hasNext()){
+				System.out.println(iter.next().toString());
+			}
+		}
+		
 		session.close();
 	}
 	public static int updateRecords(){
