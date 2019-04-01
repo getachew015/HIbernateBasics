@@ -44,5 +44,13 @@
         <!-- <mapping class="com.hibernate.configuration.CustomerWIthAnnotation"/> -->
         <mapping resource="/com/hibernate/crud/OrderTbl.hbm.xml"/>
         <mapping class="com.hibernate.autogeneration.Product" />
+        <mapping class="com.hibernate.loanapp.compositekey.CustomerLoan"/>
+        <mapping class="com.hibernate.loanapp.compositekey.CustomerLoanCompoPK"/>
+        <mapping class="com.hibernate.loanapp.mapping.one2one.Locker"/>
+        <mapping class="com.hibernate.loanapp.mapping.one2one.CustomerLocker"/>
+        <mapping class="com.hibernate.loanapp.mapping.One2Many.OrderCustomer"/>
+        <mapping class="com.hibernate.loanapp.mapping.One2Many.CustomerOrder"/>
+        <mapping class="com.hibernate.loanapp.mapping.Many2Many.GymCustomer"/>
+        <mapping class="com.hibernate.loanapp.mapping.Many2Many.GymPackage"/>
     </session-factory>
 </hibernate-configuration>

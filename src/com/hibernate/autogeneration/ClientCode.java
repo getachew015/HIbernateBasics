@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class ClientCode {
 
 	public static void main(String[] args) {
-		
+		/*
+		 * A client code to implement auto generated primary key using "increment" strategy
+		 * 
+		 */
 		// TODO Auto-generated method stub
 		ProductDAO productdao = new ProductDAO();
 		System.out.println("Adding new Product ...");

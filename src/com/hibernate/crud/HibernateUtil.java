@@ -9,7 +9,7 @@ public class HibernateUtil {
 	static {
 		try {
 			/*
-	This utility class will be used to get sessionFactory object
+				This utility class will be used to get sessionFactory object
 			 */
 			Configuration configuration = new Configuration().configure("/hbm.cfg.xml");
 			sessionFactory = configuration.buildSessionFactory();
